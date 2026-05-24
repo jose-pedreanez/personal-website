@@ -34,3 +34,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# env files (extra safety — .local variants already covered above)
+.env.development
+.env.production
+.env.test
+
+# editor
+.vscode/
+.idea/
+
+# others
+.claude
