@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "PowerShell(taskkill /PID 36840 /F 2>&1)",
-      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)"
+      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "Bash(npm outdated *)",
+      "Bash(npm install *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('dependencies', {}\\).get\\('postcss', 'not found'\\)\\)\")"
     ]
   }
 }
