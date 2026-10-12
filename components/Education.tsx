@@ -25,7 +25,7 @@ const degrees: Degree[] = [
     field: "Mechanical Engineering",
     school: "Schulich School of Engineering",
     location: "Calgary, Alberta 🇨🇦",
-    period: "2016 — 2022",
+    period: "2016 to 2022",
     highlights: [
       "Minor in Petroleum Engineering",
       "Minor in Geophysics",
@@ -88,7 +88,7 @@ function DegreeCard({ degree, index }: { degree: Degree; index: number }) {
             <ul className="mt-4 space-y-2">
               {degree.highlights.map((h) => (
                 <li key={h} className="flex items-start gap-2 text-sm text-[#888888]">
-                  <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">—</span>
+                  <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">•</span>
                   {h}
                 </li>
               ))}
@@ -116,7 +116,7 @@ export default function Education() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs text-[#3b82f6] uppercase tracking-widest">
-              04 — Education
+              03 Education
             </span>
             <div className="flex-1 h-px bg-[#1a1a1a]" />
           </div>
@@ -124,7 +124,7 @@ export default function Education() {
             Where it started.
           </h2>
           <p className="text-[#666666] max-w-xl leading-relaxed">
-            A mechanical engineering degree that laid the foundation — from
+            A mechanical engineering degree that laid the foundation, from
             thermofluids and FEA to hands-on manufacturing and competition aircraft.
           </p>
         </motion.div>

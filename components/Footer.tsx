@@ -11,13 +11,13 @@ export default function Footer() {
             <span className="font-mono text-[10px] text-[#3b82f6] font-bold">JP</span>
           </div>
           <span className="font-mono text-xs text-[#333333]">
-            Jose Pedreanez — Robotics &amp; Systems Engineer
+            Jose Pedreanez, Robotics &amp; Systems Engineer
           </span>
         </div>
 
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/videopro291"
+            href="https://github.com/jose-pedreanez"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#333333] hover:text-[#888888] transition-colors"

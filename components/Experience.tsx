@@ -27,7 +27,7 @@ const roles: Role[] = [
     company: "BoxBot Inc",
     companyUrl: "https://www.boxbot.io",
     logo: "/images/experiences_logos/boxbot.webp",
-    period: "Oct 2025 — Present",
+    period: "Oct 2025 to Present",
     type: "Full-time",
     location: "Alameda, California 🇺🇸",
     current: true,
@@ -35,10 +35,10 @@ const roles: Role[] = [
       "First engineering hire responsible for commissioning and deploying BoxBot's inaugural ASRS system to a live customer site, serving as primary test, deployment and field support engineer across the full stack from hardware to UI.",
     highlights: [
       "Led field commissioning of the company's first ASRS deployment, acting as a primary technical point-of-contact across hardware, software, and mechanical systems",
-      "Established engineering standards for a team of 7 — defining GitHub branching strategy, merge-to-main rules, and a mandatory test-approval gate where PRs required my sign-off before merging, ensuring all changes were validated in hardware before reaching production.",
+      "Established engineering standards for a team of 7, defining GitHub branching strategy, merge-to-main rules, and a mandatory test-approval gate where PRs required my sign-off before merging, ensuring all changes were validated in hardware before reaching production.",
       "Redesigned HMI deployment from decentralized per-client git installs to a Dockerized Next.js instance hosted on the backend server, giving all HMI clients a single source of truth and making CI/CD viable for the first time.",
       "Implemented a git-hash broadcast service in the Docker container; all HMI clients auto-refresh on new deploys enabling fully remote updates to a live customer site with no on-site personnel required.",
-      "Operated across the full hardware-to-UI stack on-site: modified TwinCAT PLC logic for customer-specific motion profiles and hardware changes, then propagated those changes through the Next.js HMI and deployed — no handoff required.",
+      "Operated across the full hardware-to-UI stack on-site: modified TwinCAT PLC logic for customer-specific motion profiles and hardware changes, then propagated those changes through the Next.js HMI and deployed, no handoff required.",
     ],
     tech: [
       "Next.js",
@@ -55,14 +55,14 @@ const roles: Role[] = [
     company: "Pan Pacific Pet",
     companyUrl: "https://www.panpacificpet.com",
     logo: "/images/experiences_logos/pan_pacific_pet.png",
-    period: "Jul 2025 — Oct 2025",
+    period: "Jul 2025 to Oct 2025",
     type: "Full-Time",
     location: "Calgary, Alberta 🇨🇦",
     description:
-      "Led the operational handoff to decouple Pan Pacific Pet's live ASRS system from Attabotics ownership — keeping everything running with zero downtime while transferring full operational control.",
+      "Led the operational handoff to decouple Pan Pacific Pet's live ASRS system from Attabotics ownership, keeping everything running with zero downtime while transferring full operational control.",
     highlights: [
       "Decoupled live ASRS system from Attabotics ownership with zero downtime during full operational transfer",
-      "Built automated monitoring via MQTT subscription service through Azure Service App and Application Insights — eliminated manual monitoring and freed 50% of team manpower",
+      "Built automated monitoring via MQTT subscription service through Azure Service App and Application Insights, eliminated manual monitoring and freed 50% of team manpower",
       "Migrated system GUI from external domain dependency to local authentication, removing external dependency risks",
       "Set up secure external operator access through network architecture changes and .NET application configuration",
     ],
@@ -82,7 +82,7 @@ const roles: Role[] = [
     company: "Attabotics",
     companyUrl: "https://www.attabotics.com",
     logo: "/images/experiences_logos/attabotics.jpg",
-    period: "Apr 2023 — Jul 2025",
+    period: "Apr 2023 to Jul 2025",
     type: "Full-time",
     location: "Calgary, Alberta 🇨🇦",
     description:
@@ -113,13 +113,13 @@ const roles: Role[] = [
     company: "Intact Insurance",
     companyUrl: "https://www.intact.ca",
     logo: "/images/experiences_logos/intact.png",
-    period: "May 2020 — Mar 2023",
+    period: "May 2020 to Mar 2023",
     type: "Full-time",
     location: "Calgary, Alberta 🇨🇦",
     description:
       "Built business intelligence tooling for national sales operations, including a cross-regional Power BI dashboard and automated ETL pipelines.",
     highlights: [
-      "Designed and deployed a Power BI dashboard integrating SQL Server, Excel, and CSV sources to unify sales data across Canada — with drill-down to regional and electoral district level",
+      "Designed and deployed a Power BI dashboard integrating SQL Server, Excel, and CSV sources to unify sales data across Canada, with drill-down to regional and electoral district level",
       "Automated ETL processes for national and international BI reports using Visual Basic, reducing manual effort across the analytics team",
     ],
     tech: ["Power BI", "SQL Server", "Visual Basic", "Excel", "DAX", "ETL"],
@@ -129,7 +129,7 @@ const roles: Role[] = [
     company: "CNOOC Petroleum",
     companyUrl: "https://www.cnoocpetroleum.ca",
     logo: "/images/experiences_logos/cnooc.png",
-    period: "Jan 2021 — Feb 2022",
+    period: "Jan 2021 to Feb 2022",
     type: "Co-op",
     location: "Fort McMurray, Alberta 🇨🇦",
     description:
@@ -265,7 +265,7 @@ function RoleCard({ role, index }: { role: Role; index: number }) {
                   <ul className="space-y-2">
                     {role.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2 text-sm text-[#888888]">
-                        <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">—</span>
+                        <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">•</span>
                         {h}
                       </li>
                     ))}
@@ -325,17 +325,13 @@ export default function Experience() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs text-[#3b82f6] uppercase tracking-widest">
-              03 — Experience
+              02 Experience
             </span>
             <div className="flex-1 h-px bg-[#1a1a1a]" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[#e8e8e8] mb-4 tracking-tight">
-            From field to codebase.
-          </h2>
           <p className="text-[#666666] max-w-xl leading-relaxed">
             A mechanical engineering foundation applied across ASRS systems,
-            industrial robotics, data analytics, and field deployment — from
-            Calgary to California.
+            industrial robotics, data analytics, and field deployment.
           </p>
         </motion.div>
 

@@ -40,7 +40,7 @@ const projects: Project[] = [
     icon: <Plane size={18} />,
     category: "Engineering Project · University of Calgary",
     company: "Schulich AeroDesign",
-    title: "25 kg Remote-Controlled Airplane — SAE Aero Design West",
+    title: "25 kg Remote-Controlled Airplane, SAE Aero Design West",
     tagline:
       "Designed, built, and flew a 25 kg RC aircraft with a 3-meter wingspan for SAE Aero Design West Competition, validated through wind tunnel testing and FEA.",
     tags: ["SolidWorks", "ANSYS FEA", "Aerodynamics", "Wind tunnel", "Manufacturing"],
@@ -64,9 +64,9 @@ const projects: Project[] = [
       "Empirical aerodynamics",
     ],
     decisions:
-      "Selected the 18\"×6 propeller after wind tunnel testing confirmed it produced optimal thrust at 40 ft/s flight speed — analytical selection alone wasn't sufficient, physical validation was needed to account for real-world flow effects. FEA was used to identify stress concentrations early and drive material removal in non-critical areas to hit weight targets.",
+      "Selected the 18\"×6 propeller after wind tunnel testing confirmed it produced optimal thrust at 40 ft/s flight speed, analytical selection alone wasn't sufficient, physical validation was needed to account for real-world flow effects. FEA was used to identify stress concentrations early and drive material removal in non-critical areas to hit weight targets.",
     challenges:
-      "Balancing structural requirements with weight targets required iterative design cycles. Wind tunnel testing revealed that initial propeller candidates underperformed their analytical predictions — required running multiple candidates through the tunnel to find the right match for this aircraft configuration.",
+      "Balancing structural requirements with weight targets required iterative design cycles. Wind tunnel testing revealed that initial propeller candidates underperformed their analytical predictions, required running multiple candidates through the tunnel to find the right match for this aircraft configuration.",
     outcome:
       "Designed, built, and successfully flew the aircraft in SAE Aero Design West competition. The team handled propeller design in 2018 and full manufacturing/assembly lead in 2022.",
     role:
@@ -80,7 +80,7 @@ const projects: Project[] = [
       {
         src: "/images/aero_design/1648010656082.jpg",
         alt: "ANSYS FEA total deformation analysis of the wing",
-        caption: "ANSYS static structural — wing deformation analysis",
+        caption: "ANSYS static structural, wing deformation analysis",
       },
     ],
   },
@@ -89,24 +89,24 @@ const projects: Project[] = [
     icon: <Server size={18} />,
     category: "Personal Project · Self-Hosted",
     company: "Personal Project",
-    title: "Home Lab — Proxmox Virtualization Platform",
+    title: "Home Lab, Proxmox Virtualization Platform",
     tagline:
       "Self-hosted hypervisor environment running Ubuntu VMs and LXC containers for personal service hosting, infrastructure experimentation, and development workflows.",
     tags: ["Proxmox", "Ubuntu", "LXC", "Virtualization", "Linux"],
     problem:
       "Needed a flexible local platform to host personal services, experiment with deployment patterns, and run workloads without paying for cloud compute or being constrained by managed hosting limitations.",
     constraints: [
-      "Consumer hardware — power draw and thermal limits mattered",
-      "Single operator — had to stay manageable without a team",
+      "Consumer hardware, power draw and thermal limits mattered",
+      "Single operator, had to stay manageable without a team",
       "Workloads needed isolation so one failing service couldn't take down others",
     ],
     architecture:
       "Proxmox VE runs as the bare-metal hypervisor. Compute workloads run inside Ubuntu Server VMs for full OS isolation; lightweight utility services (DNS, small APIs) run in LXC containers to minimize overhead. Snapshots before any major change mean rollbacks are fast. VMs are provisioned with cloud-init templates to avoid manual setup repetition.",
     tech: ["Proxmox VE", "Ubuntu Server", "LXC containers", "Cloud-init", "KVM", "PowerShell"],
     decisions:
-      "Proxmox over plain Docker on bare metal because VM-level isolation means a broken experiment can't corrupt the host. LXC containers reserved for stateless or low-risk services where the overhead of a full VM isn't justified. Snapshots are taken before any invasive change — learned this after a misconfigured network stack took down a VM and recovery from scratch was slow.",
+      "Proxmox over plain Docker on bare metal because VM-level isolation means a broken experiment can't corrupt the host. LXC containers reserved for stateless or low-risk services where the overhead of a full VM isn't justified. Snapshots are taken before any invasive change, learned this after a misconfigured network stack took down a VM and recovery from scratch was slow.",
     challenges:
-      "Resource contention between VMs required tuning CPU pinning and memory ballooning. Initial network bridge configuration on Proxmox had a subtle MTU mismatch that caused intermittent packet loss — diagnosed with ping flood tests and fixed in the bridge config.",
+      "Resource contention between VMs required tuning CPU pinning and memory ballooning. Initial network bridge configuration on Proxmox had a subtle MTU mismatch that caused intermittent packet loss, diagnosed with ping flood tests and fixed in the bridge config.",
     outcome:
       "Stable platform that has been running continuously for personal service hosting and development. Acts as a production-style sandbox where deployment patterns, networking configs, and service architectures can be tested before applying them at work.",
     role: "Sole architect, builder, and operator.",
@@ -118,12 +118,12 @@ const projects: Project[] = [
     company: "Personal Project",
     title: "Browser-Based RS-232 Hardware Control Interface",
     tagline:
-      "Python web app that translates browser button clicks into RS-232 serial commands via TCP — controlling physical hardware from any device on the LAN.",
+      "Python web app that translates browser button clicks into RS-232 serial commands via TCP, controlling physical hardware from any device on the LAN.",
     tags: ["Python", "TCP/IP", "RS-232", "Web UI", "IP-to-Serial"],
     problem:
       "Had physical hardware (audio/AV devices) that only accepted RS-232 serial commands. Wanted to control them from a browser on any LAN device rather than needing a laptop physically connected via serial cable.",
     constraints: [
-      "Target hardware only spoke RS-232 — no USB, no network interface",
+      "Target hardware only spoke RS-232, no USB, no network interface",
       "Control needed to work from any device on the LAN, not just one machine",
       "Needed to understand the device's serial command protocol with limited documentation",
     ],
@@ -133,10 +133,10 @@ const projects: Project[] = [
     decisions:
       "Web UI over a CLI tool so control works from phones and tablets without any client install. TCP to the IP-to-serial adapter rather than direct serial from the server so the server and hardware don't need to be physically co-located. Built the telnet relay as a separate lightweight service so it could be reused for other network-controlled equipment.",
     challenges:
-      "The serial command protocol had gaps in documentation — had to observe responses with a serial monitor to reverse-engineer the correct framing and timing. The IP-to-serial adapter had its own quirks around TCP session handling; sending commands too fast caused dropped bytes that silently failed. Added per-command delays and response validation to make it reliable.",
+      "The serial command protocol had gaps in documentation, had to observe responses with a serial monitor to reverse-engineer the correct framing and timing. The IP-to-serial adapter had its own quirks around TCP session handling; sending commands too fast caused dropped bytes that silently failed. Added per-command delays and response validation to make it reliable.",
     outcome:
       "Working browser-based control interface for RS-232 hardware accessible from any device on the home network. Reusable pattern for network-bridging any RS-232 or telnet-controlled equipment.",
-    role: "Sole author — protocol research, backend, UI, and hardware integration.",
+    role: "Sole author, protocol research, backend, UI, and hardware integration.",
   },
   {
     id: "homelab-dashboard",
@@ -148,22 +148,22 @@ const projects: Project[] = [
       "Locally hosted dashboard backed by SQL Server, pulling live stock data and serving near real-time visualizations with no external cloud dependency.",
     tags: ["SQL Server", "React", "Next.js", "Supabase", "Azure Logic Apps"],
     problem:
-      "Wanted a live data dashboard that updated in near real-time from a local database — without paying for cloud BI tools or being limited by their refresh rate constraints.",
+      "Wanted a live data dashboard that updated in near real-time from a local database, without paying for cloud BI tools or being limited by their refresh rate constraints.",
     constraints: [
       "All data storage and serving had to be self-hosted on the home lab",
       "Dashboard had to update near real-time, not on a slow scheduled refresh",
       "Data ingestion pipeline had to run automatically without manual triggering",
     ],
     architecture:
-      "A dedicated Proxmox VM runs Microsoft SQL Server as the data store. An ingestion pipeline collects stock data and writes it into SQL Server on a schedule — automated via Azure Logic Apps and Power Automate for orchestration. A second VM/container serves a React/Next.js frontend that queries the database and renders live-updating charts. Supabase explored as an alternative backend layer for realtime subscriptions.",
+      "A dedicated Proxmox VM runs Microsoft SQL Server as the data store. An ingestion pipeline collects stock data and writes it into SQL Server on a schedule, automated via Azure Logic Apps and Power Automate for orchestration. A second VM/container serves a React/Next.js frontend that queries the database and renders live-updating charts. Supabase explored as an alternative backend layer for realtime subscriptions.",
     tech: ["Microsoft SQL Server", "React", "Next.js", "Azure Logic Apps", "Power Automate", "Supabase", "DAX"],
     decisions:
-      "SQL Server chosen because I already had experience with it from Intact and wanted a local instance to experiment with without cost. Azure Logic Apps for ingestion orchestration because it handles scheduling and retry logic without me managing a cron job. Evaluated Supabase as a lighter alternative — useful for its realtime WebSocket subscriptions but adds an external dependency.",
+      "SQL Server chosen because I already had experience with it from Intact and wanted a local instance to experiment with without cost. Azure Logic Apps for ingestion orchestration because it handles scheduling and retry logic without me managing a cron job. Evaluated Supabase as a lighter alternative, useful for its realtime WebSocket subscriptions but adds an external dependency.",
     challenges:
       "Getting sub-minute refresh rates without hammering the database required thinking carefully about polling vs. push-based updates. SQL Server on a VM needed tuned memory limits so it didn't starve other VMs on the host.",
     outcome:
-      "Self-hosted dashboard running on the home lab with near real-time data updates from a locally managed SQL Server instance. Full control over data, refresh rate, and visualization — no SaaS subscription required.",
-    role: "Sole author — data pipeline, database setup, and frontend.",
+      "Self-hosted dashboard running on the home lab with near real-time data updates from a locally managed SQL Server instance. Full control over data, refresh rate, and visualization, no SaaS subscription required.",
+    role: "Sole author, data pipeline, database setup, and frontend.",
   },
   {
     id: "homelab-pihole",
@@ -175,19 +175,19 @@ const projects: Project[] = [
       "Network-wide DNS filtering and ad blocking via Pi-hole running in an LXC container, giving full visibility and control over LAN traffic across all devices.",
     tags: ["Pi-hole", "DNS", "Networking", "LXC", "LAN"],
     problem:
-      "Home network had no visibility into DNS traffic, no ad/tracker blocking at the network level, and every device managed its own DNS independently — no central control point.",
+      "Home network had no visibility into DNS traffic, no ad/tracker blocking at the network level, and every device managed its own DNS independently, no central control point.",
     constraints: [
       "Had to handle DNS for all LAN devices without requiring per-device config changes",
-      "Needed to stay online reliably — DNS downtime breaks every device on the network",
+      "Needed to stay online reliably, DNS downtime breaks every device on the network",
       "Low resource footprint so it didn't consume meaningful VM resources",
     ],
     architecture:
-      "Pi-hole runs in a lightweight LXC container on Proxmox. Router DHCP is configured to hand out the Pi-hole container's IP as the primary DNS server for the entire LAN — no per-device changes needed. Pi-hole intercepts DNS queries, blocks known ad/tracker domains at the DNS level, and forwards clean queries upstream. Query logs give per-device visibility into all DNS traffic on the network.",
+      "Pi-hole runs in a lightweight LXC container on Proxmox. Router DHCP is configured to hand out the Pi-hole container's IP as the primary DNS server for the entire LAN, no per-device changes needed. Pi-hole intercepts DNS queries, blocks known ad/tracker domains at the DNS level, and forwards clean queries upstream. Query logs give per-device visibility into all DNS traffic on the network.",
     tech: ["Pi-hole", "LXC", "DNS", "DHCP", "Proxmox networking", "LAN administration"],
     decisions:
-      "LXC container over a full VM because Pi-hole's resource needs are minimal and I wanted it always running even when heavier VMs are paused. Router-level DHCP DNS override means all devices get filtering automatically — no client config required. Set a secondary upstream DNS fallback so if the Pi-hole container ever goes down, devices degrade gracefully rather than losing DNS entirely.",
+      "LXC container over a full VM because Pi-hole's resource needs are minimal and I wanted it always running even when heavier VMs are paused. Router-level DHCP DNS override means all devices get filtering automatically, no client config required. Set a secondary upstream DNS fallback so if the Pi-hole container ever goes down, devices degrade gracefully rather than losing DNS entirely.",
     challenges:
-      "Some smart home devices hard-coded their own DNS servers (common with IoT) and bypassed Pi-hole entirely — required firewall rules to intercept and redirect DNS queries from those devices. Initial blocklist tuning blocked a few legitimate services that had to be whitelisted.",
+      "Some smart home devices hard-coded their own DNS servers (common with IoT) and bypassed Pi-hole entirely, required firewall rules to intercept and redirect DNS queries from those devices. Initial blocklist tuning blocked a few legitimate services that had to be whitelisted.",
     outcome:
       "Network-wide ad and tracker blocking across all LAN devices with zero per-device configuration. Full DNS query logging provides visibility into what every device on the network is connecting to.",
     role: "Sole setup and operator.",
@@ -294,7 +294,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   <ul className="space-y-1.5">
                     {project.constraints.map((c) => (
                       <li key={c} className="flex items-start gap-2 text-sm text-[#888888]">
-                        <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">—</span>
+                        <span className="text-[#3b82f6] mt-0.5 flex-shrink-0">•</span>
                         {c}
                       </li>
                     ))}
@@ -420,7 +420,7 @@ export default function Projects() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs text-[#3b82f6] uppercase tracking-widest">
-              02 — Projects
+              02 Projects
             </span>
             <div className="flex-1 h-px bg-[#1a1a1a]" />
           </div>
@@ -429,7 +429,7 @@ export default function Projects() {
           </h2>
           <p className="text-[#666666] max-w-xl leading-relaxed">
             Real projects from real deployments. Click any card to expand the
-            full context — problem, approach, engineering decisions, and outcome.
+            full context, problem, approach, engineering decisions, and outcome.
           </p>
         </motion.div>
 
@@ -447,7 +447,7 @@ export default function Projects() {
           className="mt-8 text-center"
         >
           <a
-            href="https://github.com/videopro291"
+            href="https://github.com/jose-pedreanez"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[#555555] hover:text-[#e8e8e8] transition-colors"

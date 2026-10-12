@@ -37,7 +37,7 @@ const articles: Article[] = [
   {
     title: "Self-Hosting as Engineering Practice",
     excerpt:
-      "Running your own Proxmox cluster, Pi-hole, VPN, and dashboards teaches you things cloud services abstract away. It's not about saving money — it's about understanding what you're depending on.",
+      "Running your own Proxmox cluster, Pi-hole, VPN, and dashboards teaches you things cloud services abstract away. It's not about saving money, it's about understanding what you're depending on.",
     topic: "Infrastructure",
     readTime: "6 min",
     date: "Nov 2024",
@@ -46,7 +46,7 @@ const articles: Article[] = [
   {
     title: "The Operational Gap in Robotics Startups",
     excerpt:
-      "Most robotics startups focus on hardware capabilities. But the operational layer — monitoring, alerting, incident response, fleet management — is what determines whether the system actually runs reliably in production.",
+      "Most robotics startups focus on hardware capabilities. But the operational layer, monitoring, alerting, incident response, fleet management, is what determines whether the system actually runs reliably in production.",
     topic: "Robotics Operations",
     readTime: "7 min",
     date: "Sep 2024",
@@ -119,7 +119,7 @@ export default function Writing() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs text-[#3b82f6] uppercase tracking-widest">
-              04 — Writing
+              04 Writing
             </span>
             <div className="flex-1 h-px bg-[#1a1a1a]" />
           </div>

@@ -48,8 +48,8 @@ export default function Contact() {
     {
       icon: <Github size={16} />,
       label: "GitHub",
-      value: "github.com/videopro291",
-      href: "https://github.com/videopro291",
+      value: "github.com/jose-pedreanez",
+      href: "https://github.com/jose-pedreanez",
     },
     {
       icon: <Linkedin size={16} />,
@@ -71,7 +71,7 @@ export default function Contact() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs text-[#3b82f6] uppercase tracking-widest">
-              06 — Contact
+              06 Contact
             </span>
             <div className="flex-1 h-px bg-[#1a1a1a]" />
           </div>

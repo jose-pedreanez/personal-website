@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import ImageModal from "./ImageModal";
 
@@ -76,13 +76,6 @@ export default function Hero() {
               className="flex flex-wrap gap-3"
             >
               <button
-                onClick={() => scrollTo("projects")}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3b82f6] text-white rounded text-sm font-medium hover:bg-[#2563eb] transition-colors"
-              >
-                View Projects
-                <ArrowRight size={14} />
-              </button>
-              <button
                 onClick={() => scrollTo("experience")}
                 className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#2a2a2a] text-[#e8e8e8] rounded text-sm font-medium hover:border-[#3b82f6]/40 hover:bg-[#3b82f6]/5 transition-all"
               >
@@ -105,7 +98,7 @@ export default function Hero() {
               className="flex items-center gap-5 mt-10 pt-8 border-t border-[#1a1a1a]"
             >
               <a
-                href="https://github.com/videopro291"
+                href="https://github.com/jose-pedreanez"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[#555555] hover:text-[#e8e8e8] transition-colors text-sm"
@@ -186,30 +179,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats strip */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          custom={0.65}
-          className="mt-20 -mx-6 grid grid-cols-2 sm:grid-cols-4 gap-8 rounded-2xl border border-[#1a1a1a] bg-[#0a0a0a]/40 backdrop-blur-sm p-6"
-        >
-          {[
-            { label: "Years in Industry", value: "5+" },
-            { label: "ASRS Systems", value: "9" },
-            { label: "System Uptime", value: "99%" },
-            { label: "Charging Time Cut", value: "40%" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-2xl font-semibold text-[#e8e8e8] mb-1">
-                {stat.value}
-              </div>
-              <div className="text-xs text-[#555555] uppercase tracking-wider font-mono">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+
       </div>
 
       {/* Scroll indicator */}

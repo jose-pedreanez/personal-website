@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Jose Pedreanez" }],
   openGraph: {
-    title: "Jose Pedreanez — Field & Systems Engineer",
+    title: "Jose Pedreanez, Field & Systems Engineer",
     description:
       "Test & Deployment Engineer specializing in ASRS systems, industrial automation, robotics, and hardware/software integration.",
     type: "website",
