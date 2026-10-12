@@ -62,9 +62,7 @@ export default function Hero() {
               custom={0.35}
               className="text-lg text-[#888888] leading-relaxed mb-10 max-w-xl"
             >
-              I work on robotics and industrial automation. My work tends to span the full stack: hardware
-              integration, control software, the tooling that monitors it, and the
-              interface watching it run.
+              I work on automated storage and retrieval systems (ASRS), bringing together robotics, hardware integration, and control software. My work spans deployment, monitoring, and operator interfaces to keep these systems running reliably.
             </motion.p>
 
             {/* CTA */}
